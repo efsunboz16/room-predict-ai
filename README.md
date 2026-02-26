@@ -1,6 +1,4 @@
-﻿# room-predict-ai
-
- # 🏠 Real Estate X-Ray: Room Classification AI
+# 🏠 Real Estate X-Ray: Room Classification AI (room-predict-ai)
 
 Bu proje, emlak ilanlarındaki fotoğrafları analiz ederek odayı 10 farklı kategoriden birine otomatik olarak sınıflandıran derin öğrenme (Deep Learning) tabanlı bir yapay zeka modülüdür. 
 
@@ -32,32 +30,14 @@ Eğitim aşamasında, 11 milyon parametreli ResNet-18 modelinin verileri ezberle
 
 ## ⚙️ Kurulum ve Gereksinimler
 
-Projenin kendi izole ortamında, özellikle RTX 50 serisi gibi modern ve güçlü NVIDIA ekran kartlarında (CUDA 12.1) tam kapasite çalışabilmesi için aşağıdaki adımları izleyin.
+Projenin kendi izole ortamında çalışabilmesi için aşağıdaki adımları izleyin. Sisteminizde CUDA destekli bir GPU (örn. RTX 50 serisi) varsa GPU sürümünü, yoksa standart CPU sürümünü kurabilirsiniz.
 
 **1. Virtual Environment (Sanal Ortam) Oluşturma ve Aktifleştirme:**
-
+```bash
 python -m venv venv
 
 # Windows için:
 .\venv\Scripts\activate
+
 # Mac/Linux için:
 source venv/bin/activate
-
-pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121) pillow
-
-# Otomatik kullanım (Klasördeki ilk resmi analiz eder)
-python predict.py
-
-# Veya spesifik bir fotoğrafı test etmek için:
-python predict.py ornek_ilan_fotografi.jpg
-
-==================================================
-📸 Analiz Edilen Fotoğraf: ornek_ilan_fotografi.jpg
-==================================================
-  1. Tahmin: %92.45 ihtimalle KITCHEN
-  2. Tahmin: %6.10 ihtimalle DINING
-  3. Tahmin: %0.85 ihtimalle LIVING
-==================================================
-
-
-
